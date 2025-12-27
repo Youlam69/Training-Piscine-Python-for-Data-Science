@@ -3,8 +3,8 @@ import string
 
 def text_counter(text: str):
     """
-    Counts the number of upper case, lower case, punctuation marks,
-    spaces and digits in a given text and prints the results.
+    Counts and prints the number of upper case, lower case, punctuation marks,
+    spaces, and digits in a given string.
     """
     upper = 0
     lower = 0
@@ -33,7 +33,8 @@ def text_counter(text: str):
 
 def main():
     """
-    Main function to handle arguments and call the counter.
+    Main entry point of the script. Handles command line arguments
+    and interactive input if no arguments are provided.
     """
     try:
         # 1. Check if more than one argument
@@ -44,16 +45,17 @@ def main():
         if len(sys.argv) < 2 or sys.argv[1] is None or sys.argv[1] == "":
             text = input("What is the text to count?\n")
             text += "\n" # Adding newline to match standard input behavior
+        # 3. Case: One argument provided
         else:
             text = sys.argv[1]
 
         text_counter(text)
-        
-    except EOFError:
-        # If user presses Ctrl+D, exit cleanly
-        pass
+    # 4. Handle EOFError and AssertionError in case ctrl+D is pressed
+
     except AssertionError as e:
         print(f"AssertionError: {e}")
+    except EOFError:
+        pass
 
 if __name__ == "__main__":
     main()
