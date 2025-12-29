@@ -56,6 +56,9 @@ def main():
         print(f"AssertionError: {e}")
     except EOFError:
         pass
+    except KeyboardInterrupt: 
+        pass
+
 
 if __name__ == "__main__":
     main()
