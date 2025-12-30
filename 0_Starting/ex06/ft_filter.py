@@ -1,3 +1,5 @@
+
+
 def ft_filter(function, iterable):
     """filter(function or None, iterable) --> filter object
 

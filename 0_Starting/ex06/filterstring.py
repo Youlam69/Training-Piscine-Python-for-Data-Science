@@ -1,35 +1,40 @@
 import sys
-# Import ft_filter li ghadi t-sawb f Part 1
-from ft_filter import ft_filter
+
 
 def main():
-    """Main function for filtering strings by length."""
+    """
+    Program that takes a string S and an integer N,
+    and outputs words longer than N.
+    """
     try:
-        # 1. Check arguments count (khass y-kounou 2 + smiyt l-file)
+        # Check if number of arguments is exactly 2 (plus script name)
+        # [cite: 189]
         if len(sys.argv) != 3:
             raise AssertionError("the arguments are bad")
-            
-        # 2. Check types
-        # Argument 1 (S) khass ykoun string, Argument 2 (N) khass ykoun integer
+
         S = sys.argv[1]
+        # Try to convert second argument to integer [cite: 185, 189]
         try:
             N = int(sys.argv[2])
         except ValueError:
             raise AssertionError("the arguments are bad")
 
-        # 3. Split string into words
+        # Words are separated by space characters [cite: 186]
+        # Strings do not contain special characters [cite: 187]
         words = S.split()
 
-        # 4. Logic wuth List Comprehension and Lambda 
-        
-
-        # Hna khass t-khdem b ft_filter li sawbti
+        # Requirement: At least one list comprehension and
+        # one lambda [cite: 188]
+        # We use lambda to define the condition
+        # We use list comprehension to create the final list
         result = [word for word in words if (lambda w: len(w) > N)(word)]
-        
         print(result)
 
     except AssertionError as e:
+        # Catch and print the assertion error [cite: 173, 189]
         print(f"AssertionError: {e}")
 
+
 if __name__ == "__main__":
+    # Program must follow the main structure [cite: 172, 173]
     main()
