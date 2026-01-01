@@ -7,10 +7,10 @@ ft_dict = {"Hello": "titi!"}
 # your code here
 
 ft_list[1] = "World!"
+
 tmp = list(ft_tuple)
 tmp[1] = "Morocco!"
 ft_tuple = tuple(tmp)
-
 
 ft_set.remove("tutu!")
 ft_set.add("Khouribga!")
