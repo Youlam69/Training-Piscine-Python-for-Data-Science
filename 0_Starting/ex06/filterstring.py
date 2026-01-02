@@ -29,5 +29,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # No code in the global scope
     main()
