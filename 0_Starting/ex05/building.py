@@ -2,12 +2,23 @@ import sys
 
 
 def text_counter(text: str):
+    """
+    Count the number of upper letters,
+    lower letters, punctiation, Spaces and Digits in a string
+
+    Parameters:
+        inpout (str): the user input string
+
+    Returns:
+        Nothing
+    """
     upper = 0
     lower = 0
     punct = 0
     space = 0
     digit = 0
-    PUNCTUATION = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
+
+    PUNCTUATION = r"!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
     for char in text:
         if char.isupper():
@@ -38,12 +49,7 @@ def main():
             return
         print("What is the text to count?")
         text = sys.stdin.readline()
-        # Ctrl+D → empty string
-        if text == "":
-            return
-        # Only newline → do nothing
-        if text == "\n":
-            return
+
         text_counter(text)
     except KeyboardInterrupt:
         pass
