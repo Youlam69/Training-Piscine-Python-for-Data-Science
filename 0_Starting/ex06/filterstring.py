@@ -15,16 +15,13 @@ def main():
         try:
             n_input = int(sys.argv[2])
         except ValueError:
-            # Type of argument is wrong
             raise AssertionError("the arguments are bad")
 
-        # Words are separated by space characters
         words = s_input.split()
         result = [wrd for wrd in ft_filter(lambda w: len(w) > n_input, words)]
         print(result)
 
     except AssertionError as e:
-        # Catch and print the assertion error
         print(f"AssertionError: {e}")
 
 
